@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>A11y Tokyo meetup soundboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<h1><img src="logo.svg" alt="A11y Tokyo Meetup" width="120" height="120"/> soundboard</h1>
+			<p>Time to say goodbye!</p>
+		</header>
+		<div class="buttons">
+			<!-- Key mappings from here: https://boostrobotics.eu/windows-key-codes/ -->
+			<button data-key="49" onclick="play1()"><em>(1)</em> Thank you, please leave!</button>
+			<button data-key="50" onclick="play2()"><em>(2)</em> Time to leave! Thank you</button>
+			<button data-key="51" onclick="play3()"><em>(3)</em> Please remove yourself!</button>
+			<button data-key="52" onclick="play4()"><em>(4)</em> Talk outside!</button>
+			<button data-key="53" onclick="play5()"><em>(5)</em> The sky is on fire!</button>
+			<button data-key="54" onclick="play6()"><em>(6)</em> Next is death metal!</button>
+		</div>
+		<div class="small buttons">
+			<button data-key="55" onclick="play7()"><em>(7)</em> Laughter 1</button>
+			<button data-key="56" onclick="play8()"><em>(8)</em> Laughter 2</button>
+			<button data-key="57" onclick="play9()"><em>(9)</em>  Laughter 3</button>
+		</div>
+		<!-- this could be visually hidden if needed -->
+		<div class="audio">
+			 <audio id="s1" src="sounds/1.mp3" type="audio/mpeg" preload></audio>
+			 <audio id="s2" src="sounds/2.mp3" type="audio/mpeg" preload></audio>
+			 <audio id="s3" src="sounds/3.mp3" type="audio/mpeg" preload></audio>
+			 <audio id="s4" src="sounds/4.mp3" type="audio/mpeg" preload></audio>
+			 <audio id="s5" src="sounds/5.mp3" type="audio/mpeg" preload></audio>
+			 <audio id="s6" src="sounds/6.mp3" type="audio/mpeg" preload></audio>
+			 <audio id="s7" src="sounds/7.mp3" type="audio/mpeg" preload></audio>
+			 <audio id="s8" src="sounds/8.mp3" type="audio/mpeg" preload></audio>
+			 <audio id="s9" src="sounds/9.mp3" type="audio/mpeg" preload></audio>
+		</div>
+		<div>
+			<p>This is the A11y Tokyo meetup soundboard. It was created to give our visitors a gentle reminder to please leave the venue.</p>
+			<p>The soundboard is made up of 5 increasingly annoyed requests to please get out and one version of 夕焼け小焼け from Osaka. The sounds are:</p>
+			<ol>
+				<li>Thank you for coming, it is time to leave.</li>
+				<li>It is indeed time to leave. Thank you.</li>
+				<li>Please remove yourself from the premise.</li>
+				<li>You can talk outside, too. Please leave.</li>
+				<li>Fiery Red Sky</li>
+				<li>The next song will be death metal. Please come again.</li>
+			</ol>
+		</div>
+		<script>
+			// this is very simple setup, same as below. This one wil trigger on keyboard input, mapped to numbers 1 – 9
+			// note that the extended keypad is not mapped at the moment, because @othersmallcities cannot figure out how
+			window.addEventListener("keydown", onKeyDown, true);
+
+			function onKeyDown(e){
+				if(e.keyCode == 49){
+					 play1();
+				}
+				if(e.keyCode == 50){
+					 play2();
+				}
+				if(e.keyCode == 51){
+					 play3();
+				}
+				if(e.keyCode == 52){
+					 play4();
+				}
+				if(e.keyCode == 53){
+					 play5();
+				}
+				if(e.keyCode == 54){
+					 play6();
+				}
+				if(e.keyCode == 55){
+					 play7();
+				}
+				if(e.keyCode == 56){
+					 play8();
+				}
+				if(e.keyCode == 57){
+					 play9();
+				}
+			}
+		
+			// this is also a very simple setup coz I am not the best at this, sorry. Please improve
+			// 1. trigger on touch / mousedown
+      function play1() {
+       var audio = document.getElementById("s1");
+        audio.play();
+      }
+      function play2() {
+        var audio = document.getElementById("s2");
+        audio.play();
+      }
+      function play3() {
+        var audio = document.getElementById("s3");
+        audio.play();
+      }
+      function play4() {
+        var audio = document.getElementById("s4");
+        audio.play();
+      }
+      function play5() {
+        var audio = document.getElementById("s5");
+        audio.play();
+      }
+      function play6() {
+        var audio = document.getElementById("s6");
+        audio.play();
+      }
+      function play7() {
+        var audio = document.getElementById("s7");
+        audio.play();
+      }
+      function play8() {
+        var audio = document.getElementById("s8");
+        audio.play();
+      }
+      function play9() {
+        var audio = document.getElementById("s9");
+        audio.play();
+      }
+      
+      // 2. play on key press, only planned for keyboard users for now... not accessible I know that too. It is an easter egg. sorry. I am ready to discuss this.
+    </script>
+	</body>
+</html>

@@ -20,6 +20,10 @@ body {
 	font-size: 1.3rem;
 }
 
+a {
+	color: var(--white);
+}
+
 .buttons {
 	display: grid;
 	gap: 1rem;
